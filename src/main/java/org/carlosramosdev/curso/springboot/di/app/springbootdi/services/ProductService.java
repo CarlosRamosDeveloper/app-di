@@ -13,7 +13,10 @@ public class ProductService {
     public List<Product> findAll() {
         return repository.findAll().stream().map(p -> {
             Double increasedPrice = p.getPrice() * 1.25d;
-            return new Product(p.getId(), p.getName(), increasedPrice.longValue());
+            Product newProduct = (Product) p.clone();
+            newProduct.setPrice(increasedPrice.longValue());
+
+            return newProduct;
         }).collect(Collectors.toList());
     }
 
