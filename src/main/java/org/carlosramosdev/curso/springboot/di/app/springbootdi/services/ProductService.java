@@ -5,16 +5,15 @@ import org.carlosramosdev.curso.springboot.di.app.springbootdi.repositories.Prod
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 public class ProductService {
 
-    private ProductRepository repository = new ProductRepository();
+    final private ProductRepository repository = new ProductRepository();
     public List<Product> findAll() {
         return repository.findAll().stream().map(p -> {
             Double increasedPrice = p.getPrice() * 1.25d;
-            p.setPrice(increasedPrice.longValue());
-            return p;
+            return new Product(p.getId(), p.getName(), increasedPrice.longValue());
         }).collect(Collectors.toList());
     }
 
