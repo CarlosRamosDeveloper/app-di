@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Golden sun",
+    "price": 475
+  },
+  {
+    "id": 2,
+    "name": "Pokémon Esmeralda",
+    "price": 250
+  },
+  {
+    "id": 3,
+    "name": "Zapatillas barefoot",
+    "price": 60
+  },
+  {
+    "id": 4,
+    "name": "Ratón laser de la muerte",
+    "price": 1000
+  }
+]
