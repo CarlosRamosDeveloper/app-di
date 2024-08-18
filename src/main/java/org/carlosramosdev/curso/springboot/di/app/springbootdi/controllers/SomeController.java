@@ -1,7 +1,8 @@
 package org.carlosramosdev.curso.springboot.di.app.springbootdi.controllers;
 
 import org.carlosramosdev.curso.springboot.di.app.springbootdi.models.Product;
-import org.carlosramosdev.curso.springboot.di.app.springbootdi.services.ProductServiceImpl;
+
+import org.carlosramosdev.curso.springboot.di.app.springbootdi.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,9 +16,9 @@ import java.util.List;
 public class SomeController {
 
     @Autowired
-    private ProductServiceImpl service;
+    private ProductService service;
 
-    @GetMapping("/")
+    @GetMapping({"/", ""})
     public List<Product> list(){
         return service.findAll();
     }
