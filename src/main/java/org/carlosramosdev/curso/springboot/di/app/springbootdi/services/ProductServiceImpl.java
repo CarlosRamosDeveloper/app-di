@@ -19,7 +19,7 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private Environment env;
 
-    public ProductServiceImpl(@Qualifier("productList") ProductRepository repository) {
+    public ProductServiceImpl(@Qualifier("productJson") ProductRepository repository) {
         this.repository = repository;
     }
 
