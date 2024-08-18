@@ -3,7 +3,6 @@ package org.carlosramosdev.curso.springboot.di.app.springbootdi.services;
 import org.carlosramosdev.curso.springboot.di.app.springbootdi.models.Product;
 
 import org.carlosramosdev.curso.springboot.di.app.springbootdi.repositories.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,8 +11,11 @@ import java.util.stream.Collectors;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    @Autowired
-    private ProductRepository repository;
+    final private ProductRepository repository;
+
+    public ProductServiceImpl(ProductRepository repository) {
+        this.repository = repository;
+    }
 
     @Override
     public List<Product> findAll() {
