@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-@Repository
+@Repository("productFoo")
 public class ProductRepositoryFoo implements ProductRepository {
 
     @Override

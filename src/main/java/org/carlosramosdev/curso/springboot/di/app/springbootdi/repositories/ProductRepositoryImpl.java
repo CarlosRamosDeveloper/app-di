@@ -8,9 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 
 @Primary
-@Repository
+@Repository("productList")
 public class ProductRepositoryImpl implements ProductRepository {
-    private List<Product> data;
+    final private List<Product> data;
 
     public ProductRepositoryImpl(){
         this.data = Arrays.asList(
